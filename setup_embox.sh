@@ -42,6 +42,7 @@ if [ -d "$forte_bin_dir" ]; then
     -DCMAKE_CXX_COMPILER_WORKS=ON \
     -DNULLPTR_SUPPORTED=ON \
     -DCMAKE_SYSTEM_NAME=Generic \
+    -DCMAKE_TOOLCHAIN_FILE="../../buildsupport/toolchains/toolchain-embox.cmake" \
     -DFORTE_ARCHITECTURE=Embox \
     -DFORTE_TESTS=OFF \
     -DFORTE_SUPPORT_BOOT_FILE=ON \
