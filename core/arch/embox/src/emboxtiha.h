@@ -10,37 +10,35 @@
   Alexander Trojnin - initial API and implementation and/or initial documentation
  ************************************************************************************/
 
-#ifndef SRC_ARCH_EMBOX_EMBOXTIHA_H_
-#define SRC_ARCH_EMBOX_EMBOXTIHA_H_
+#pragma once
+
+#include <embox/embox.h>
+#include <embox/timers.h>
 
 #include "forte/timerha.h"
 
-#include <embox/kernel.h>
+namespace forte::arch {
+  /*! \brief External event handler for the EMBOX Timer.
+   * \ingroup EMBOX-HAL
+   *
+   */
+  class CEMBOXimerHandler : public CTimerHandler {
+    public:
+      explicit CEMBOXTimerHandler(CDeviceExecution &paDeviceExecution);
 
-/*! \brief External event handler for the Embox Timer.
- * \ingroup EMBOX-HAL
- *
- */
-class CEmboxTimerHandler : public CTimerHandler {
-  public:
-    explicit CEmboxTimerHandler(CDeviceExecution &paDeviceExecution);
+      ~CEMBOXTimerHandler() override;
 
-    ~CEmboxTimerHandler() override;
+      /*!\brief Enables this event source
+       *
+       */
+      void enableHandler() override;
+      /*!\brief Disable this event source
+       */
+      void disableHandler() override;
 
-    /*!\brief Enables this event source
-     *
-     */
-    void enableHandler() override;
-    /*!\brief Disable this event source
-     */
-    void disableHandler() override;
+    private:
+      static void vCallbackFunction(TimerHandle_t paTimer);
 
-  private:
-    struct k_timer timer;
-    k_thread_stack_t *stack{0};
-    struct k_thread *thread{0};
-    static void thread_fn(void *arg1, void *arg2, void *arg3);
-    k_tid_t thread_id;
-};
-
-#endif /* SRC_ARCH_EMBOX_EMBOXTIHA_H_ */
+      TimerHandle_t mTimer;
+  };
+} // namespace forte::arch
