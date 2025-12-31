@@ -12,9 +12,4 @@
 #      - initial API and implementation and/or initial documentation
 #############################################################################
 
-target_sources(forte-core PUBLIC
-        FILE_SET HEADERS
-        BASE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}
-)
-
-add_subdirectory(forte)
+add_subdirectory(arch)

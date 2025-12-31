@@ -1,5 +1,5 @@
 #############################################################################
-# Copyright (c) 2025 Alexander Trojnin
+# Copyright (c) 2025 Martin Erich Jobst
 #
 # This program and the accompanying materials are made available under the
 # terms of the Eclipse Public License 2.0 which is available at
@@ -8,7 +8,7 @@
 # SPDX-License-Identifier: EPL-2.0
 #
 # Contributors:
-#    Alexander Trojnin
+#    Martin Erich Jobst
 #      - initial API and implementation and/or initial documentation
 #############################################################################
 

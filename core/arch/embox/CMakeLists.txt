@@ -13,13 +13,10 @@
 forte_register_architecture(Embox)
 
 if("${FORTE_ARCHITECTURE}" STREQUAL "Embox")
-
-  forte_add_include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-
   set(FORTE_LOGLEVEL "NOLOG" CACHE STRING "Loglevel to use" FORCE)
   set(FORTE_EMBOX_INCLUDES "" CACHE STRING "Folders to include from the Embox OS")
   
-  target_include_directories(forte-core PUBLIC "${FORTE_FREERTOS_INCLUDE_DIR}")
+  target_include_directories(forte-core PUBLIC "${FORTE_EMBOX_INCLUDES}")
 
   add_subdirectory(include)
   add_subdirectory(src)
