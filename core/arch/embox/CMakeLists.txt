@@ -12,7 +12,7 @@
 
 SET(SOURCE_GROUP ${SOURCE_GROUP}\\Embox)
 
-forte_add_architecture(Embox)
+forte_register_architecture(Embox)
 
 if("${FORTE_ARCHITECTURE}" STREQUAL "Embox")
 
