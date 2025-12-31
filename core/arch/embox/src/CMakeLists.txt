@@ -14,8 +14,8 @@
 
 target_sources(forte-core PRIVATE
         emboxforte_fileio.cpp
-        emboxftiha.cpp
-        emboxftiha.h
+        emboxtiha.cpp
+        emboxtiha.h
         forte_architecture_time.cpp
         forte_sem.cpp
         forte_sync.cpp
